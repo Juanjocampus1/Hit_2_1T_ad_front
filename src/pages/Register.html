@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../Styles/registerStyles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="form-container">
+            <h2>Register Customer</h2>
+            
+            <form id="registrationForm" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter phone number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" placeholder="Enter address" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+
+        <script src="../scripts/RegisterPetition.js"></script>
+    </body>
+</html>

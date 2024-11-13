@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BookWorld Dashboard</title>
+        <link rel="stylesheet" href="../Styles/indexStyles.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1>BookWorld Dashboard</h1>
+            <div class="user-info">
+                <span>Welcome, <strong id="username"></strong></span>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="company-description">
+                <h2>About BookWorld</h2>
+                <p>BookWorld offers a wide selection of books, aiming to deliver excellent customer service and quality literature for all readers.</p>
+            </section>
+
+            <nav class="navigation">
+                <button onclick="showAddProductForm()">Add Product</button>
+                <button onclick="showSellForm()">Sell</button>
+                <button onclick="loadSales()">Consult Sales</button>
+            </nav>
+
+            <!-- Formulario de Añadir Producto -->
+            <section id="addProductForm" class="form-section hidden">
+                <h2>Add Product</h2>
+                <form id="productForm">
+                    <label>Title: <input type="text" id="title" required></label>
+                    <label>Author: <input type="text" id="author" required></label>
+                    <label>ISBN: <input type="text" id="isbn" required></label>
+                    <label>Price: <input type="number" id="price" required></label>
+                    <label>Stock: <input type="number" id="stock" required></label>
+                    <button type="button" onclick="addProduct()">Add Product</button>
+                </form>
+            </section>
+
+            <!-- Apartado de Venta -->
+            <section id="sellForm" class="form-section hidden">
+                <h2>Sell Product</h2>
+                <form id="saleForm">
+                    <label>Date: <input type="date" id="date" required></label>
+                    <label>Total Amount: <input type="number" id="totalAmount" required></label>
+                    <h3>Customer Information</h3>
+                    <label>ID: <input type="number" id="customerId" required></label>
+                    <label>Name: <input type="text" id="customerName" required></label>
+                    <label>Email: <input type="email" id="customerEmail" required></label>
+                    <label>Phone: <input type="tel" id="customerPhone" required></label>
+                    <label>Address: <input type="text" id="customerAddress" required></label>
+                    <h3>Sale Items</h3>
+                    <label>Product ID: <input type="number" id="productId" required></label>
+                    <label>Product Name: <input type="text" id="productName" required></label>
+                    <label>Quantity: <input type="number" id="quantity" required></label>
+                    <label>Price: <input type="number" id="itemPrice" required></label>
+                    <button type="button" onclick="processSale()">Complete Sale</button>
+                </form>
+            </section>
+
+            <!-- Tabla de Productos -->
+            <section class="product-table">
+                <h2>Product Inventory</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>ISBN</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productList">
+                        <!-- Example Product Row -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <script src="../scripts/index.js"></script>
+    </body>
+</html>

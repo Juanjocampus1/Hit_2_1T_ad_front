@@ -1,0 +1,140 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+.user-info {
+    font-size: 16px;
+}
+
+.content {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.company-description {
+    margin-bottom: 30px;
+}
+
+.navigation button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-section label {
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="tel"],
+.form-section input[type="number"],
+.form-section input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-section input:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.form-section button {
+    padding: 10px;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-section button:hover {
+    background-color: #357ab8;
+}
+
+/* Tabla de Productos */
+.product-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table th, .product-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.product-table th {
+    background-color: #f0f0f0;
+}
+
+.product-table td button {
+    padding: 5px 10px;
+    background-color: #ff6b6b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-table td button:hover {
+    background-color: #e05a5a;
+}
+
+.hidden {
+    display: none;
+}

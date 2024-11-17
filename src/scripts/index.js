@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Verificar si hay una sesión de usuario
+    const customer = sessionStorage.getItem('customer');
+    if (!customer) {
+        alert('No user data found. Please log in.');
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // Mostrar el nombre de usuario
+    displayUsername();
+
     loadProducts();
 });
 
@@ -119,12 +130,6 @@ function getCookie(name) {
 }
 
 function displayUsername() {
-    const customerCookie = getCookie('customer');
-    if (customerCookie) {
-        const customer = JSON.parse(decodeURIComponent(customerCookie));
-        document.getElementById('username').textContent = customer.name;
-    } else {
-        alert('No user data found. Please log in.');
-        window.location.href = 'login.html';
-    }
+    const customer = JSON.parse(sessionStorage.getItem('customer'));
+    document.getElementById('username').textContent = customer.name;
 }

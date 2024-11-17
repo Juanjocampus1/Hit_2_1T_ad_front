@@ -9,10 +9,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         .then(response => response.json())
         .then(customers => {
             const customer = customers.find(customer => customer.email === email && customer.phone === phone);
-
             if (customer) {
-                // Guardar los datos del usuario en una cookie
-                document.cookie = `customer=${encodeURIComponent(JSON.stringify(customer))}; path=/; max-age=86400`;
+                // Guardar los datos del usuario en sessionStorage
+                sessionStorage.setItem('customer', JSON.stringify(customer));
                 alert('Login successful!');
                 window.location.href = 'index.html';
             } else {

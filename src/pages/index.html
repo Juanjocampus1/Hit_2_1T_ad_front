@@ -5,6 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BookWorld Dashboard</title>
         <link rel="stylesheet" href="../Styles/indexStyles.css">
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                font-size: 1em;
+                text-align: left;
+            }
+            table thead tr {
+                background-color: #009879;
+                color: #ffffff;
+                text-align: left;
+                font-weight: bold;
+            }
+            table th, table td {
+                padding: 12px 15px;
+            }
+            table tbody tr {
+                border-bottom: 1px solid #dddddd;
+            }
+            table tbody tr:nth-of-type(even) {
+                background-color: #f3f3f3;
+            }
+            table tbody tr:last-of-type {
+                border-bottom: 2px solid #009879;
+            }
+        </style>
     </head>
     <body>
         <header class="header">
@@ -40,23 +67,31 @@
                 </form>
             </section>
 
+            <!-- Formulario de Actualización de Producto -->
+            <section id="updateProductForm" class="form-section hidden">
+                <h2>Update Product</h2>
+                <form id="updateForm">
+                    <input type="hidden" id="updateProductId">
+                    <label>Title: <input type="text" id="updateTitle" required></label>
+                    <label>Author: <input type="text" id="updateAuthor" required></label>
+                    <label>ISBN: <input type="text" id="updateIsbn" required></label>
+                    <label>Price: <input type="number" id="updatePrice" required></label>
+                    <label>Stock: <input type="number" id="updateStock" required></label>
+                    <button type="button" onclick="updateProduct()">Update Product</button>
+                </form>
+            </section>
+
             <!-- Apartado de Venta -->
             <section id="sellForm" class="form-section hidden">
                 <h2>Sell Product</h2>
                 <form id="saleForm">
                     <label>Date: <input type="date" id="date" required></label>
                     <label>Total Amount: <input type="number" id="totalAmount" required></label>
-                    <h3>Customer Information</h3>
-                    <label>ID: <input type="number" id="customerId" required></label>
-                    <label>Name: <input type="text" id="customerName" required></label>
-                    <label>Email: <input type="email" id="customerEmail" required></label>
-                    <label>Phone: <input type="tel" id="customerPhone" required></label>
-                    <label>Address: <input type="text" id="customerAddress" required></label>
                     <h3>Sale Items</h3>
-                    <label>Product ID: <input type="number" id="productId" required></label>
-                    <label>Product Name: <input type="text" id="productName" required></label>
+                    <input type="hidden" id="productId"> <!-- Hidden input to store product ID -->
+                    <label>Product Name: <input type="text" id="productName" readonly></label>
                     <label>Quantity: <input type="number" id="quantity" required></label>
-                    <label>Price: <input type="number" id="itemPrice" required></label>
+                    <label>Price: <input type="number" id="itemPrice" readonly></label>
                     <button type="button" onclick="processSale()">Complete Sale</button>
                 </form>
             </section>
@@ -78,6 +113,27 @@
                     </thead>
                     <tbody id="productList">
                         <!-- Example Product Row -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Tabla de Ventas por Cliente -->
+            <section class="sales-table">
+                <h2>Your Sales</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sale ID</th>
+                            <th>Cliente</th>
+                            <th>Correo</th>
+                            <th>telefono</th>
+                            <th>Direccion</th>
+                            <th>Fecha</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesList">
+                        <!-- Sales will be dynamically loaded here -->
                     </tbody>
                 </table>
             </section>
